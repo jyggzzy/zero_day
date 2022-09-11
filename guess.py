@@ -3,7 +3,7 @@ import random
 
 def guess(x):
     random_number = random.randint(5, x)
-    guess = 
+    guess = 5
     while guess != random_number:
         guess = int(input(f"Guess Man Utd's position at end of season 💀: "))
         if guess > random_number:
