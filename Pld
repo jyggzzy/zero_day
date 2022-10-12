@@ -1,0 +1,15 @@
+username = input("Fullname: ")
+
+age = input(int("Age: ")) 
+
+	if age < 18	print("Sorry, " + username + "you are underage")
+
+	elif age > 40
+
+	print("Sorry, " + username + "you are overage")
+
+	else
+
+	print("Welcome, " + username + "you have access to my program")
+
+	
