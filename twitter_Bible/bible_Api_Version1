@@ -4,10 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # Twitter API credentials
-consumer_key = rSZk8H1ohUHfBKN5IQTO3eDMk
-consumer_secret = Er9MptqRgATbkVx6O99qsLQN6ozFLvBsiJvwdjFfcUM59zdGMA
-access_token = AAAAAAAAAAAAAAAAAAAAAOZKiAEAAAAA5NjA%2B0%2B0tSR4rkQthgovboMFBPo%3DEGcwYvBWQjzv8e1sTvU5EQfMlVPXg3ev4Trq4oEa5Li5WuJWVk #unsure
-access_token_secret = l7loOx6_AsddYRl0abyk9h4AuuP3iJ-8Ywoa4lh2QTT-E3YSKO #unsure 
+consumer_key = 'vXTiiZg9HTFiuXMC4qV2bp5D2'
+consumer_secret = 'eZJCE7uIOJ4kzblyQEaKUEbK6hOMgvs9ZBpUPgxr10TiLuKlXk'
+access_token = '181908096-84qjgPv8FxK9yItSUmMAQAmvbZfpQ3mIFIgcSLNt' #unsure
+access_token_secret = 'JpDZLJyYB3LdXaAW2i5iDV72xORpfqHDOvGF8d7D25vat' #unsure 
 
 # Authenticate the API credentials
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
