@@ -30,5 +30,5 @@ while True:
         api.update_status(verse)
         print("Tweeted: " + verse)
     except tweepy.errors.TweepyException as error:
-        print(error.reason)
+        print(str(error))
     time.sleep(3600)  # Wait 1 hour before tweeting again
