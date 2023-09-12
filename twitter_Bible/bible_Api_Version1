@@ -1,0 +1,34 @@
+import tweepy
+import time
+import requests
+from bs4 import BeautifulSoup
+
+# Twitter API credentials
+consumer_key = rSZk8H1ohUHfBKN5IQTO3eDMk
+consumer_secret = Er9MptqRgATbkVx6O99qsLQN6ozFLvBsiJvwdjFfcUM59zdGMA
+access_token = AAAAAAAAAAAAAAAAAAAAAOZKiAEAAAAA5NjA%2B0%2B0tSR4rkQthgovboMFBPo%3DEGcwYvBWQjzv8e1sTvU5EQfMlVPXg3ev4Trq4oEa5Li5WuJWVk #unsure
+access_token_secret = l7loOx6_AsddYRl0abyk9h4AuuP3iJ-8Ywoa4lh2QTT-E3YSKO #unsure 
+
+# Authenticate the API credentials
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+# Create the Tweepy API object
+api = tweepy.API(auth)
+
+# Retrieve a random Bible verse from BibleGateway.com using web scraping
+url = "https://www.biblegateway.com/usage/votd/rss/votd.rdf"
+verse = ""
+response = requests.get(url)
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, "html.parser")
+    verse = soup.findAll("description")[1].text.replace('\n', '')
+
+# Tweet the Bible verse once every hour
+while True:
+    try:
+        api.update_status(verse)
+        print("Tweeted: " + verse)
+    except tweepy.TweepError as error:
+        print(error.reason)
+    time.sleep(3600) # Wait 1 hour before tweeting again
